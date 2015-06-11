@@ -1,0 +1,250 @@
+),
+server= function( input, output ) {
+output$myheader <- renderUI({
+tags$thead(
+tags$tr( lapply( colnames( tt ), function( x ) tags$th( x ) ) )
+)
+})
+output$mybody <- renderUI({
+rows <- list()
+for( i in 1:nrow( tt ) ) {
+rows[[i]] <- tags$tr( lapply( tt[i,], function( x ) tags$td( x ) ) )
+}
+tags$tbody( rows )
+})
+} ) )
+library( shiny )
+tt <- read.table( text="  id      blah       foo
+1  1      adsf foo1
+2  2      ioiu foo2
+3  3 ioiuoiuer foo3", stringsAsFactors= F )
+runApp( list(
+ui= basicPage(
+tags$table(
+uiOutput( "myheader" ),
+uiOutput( "mybody" )
+myheader(),
+mybody()
+)
+),
+server= function( input, output ) {
+myheader <- reactive({
+tags$thead(
+tags$tr( lapply( colnames( tt ), function( x ) tags$th( x ) ) )
+)
+})
+mybody <- reactive({
+rows <- list()
+for( i in 1:nrow( tt ) ) {
+rows[[i]] <- tags$tr( lapply( tt[i,], function( x ) tags$td( x ) ) )
+}
+tags$tbody( rows )
+})
+output$myheader <- renderUI({
+tags$thead(
+tags$tr( lapply( colnames( tt ), function( x ) tags$th( x ) ) )
+)
+})
+output$mybody <- renderUI({
+rows <- list()
+for( i in 1:nrow( tt ) ) {
+rows[[i]] <- tags$tr( lapply( tt[i,], function( x ) tags$td( x ) ) )
+}
+tags$tbody( rows )
+})
+} ) )
+library( shiny )
+tt <- read.table( text="  id      blah       foo
+1  1      adsf foo1
+2  2      ioiu foo2
+3  3 ioiuoiuer foo3", stringsAsFactors= F )
+runApp( list(
+ui= basicPage(
+tags$table(
+uiOutput( "myheader" ),
+uiOutput( "mybody" )
+),
+uiOutput( "mytable" )
+),
+server= function( input, output ) {
+myheader <- reactive({
+tags$thead(
+tags$tr( lapply( colnames( tt ), function( x ) tags$th( x ) ) )
+)
+})
+mybody <- reactive({
+rows <- list()
+for( i in 1:nrow( tt ) ) {
+rows[[i]] <- tags$tr( lapply( tt[i,], function( x ) tags$td( x ) ) )
+}
+tags$tbody( rows )
+})
+output$myheader <- renderUI({
+tags$thead(
+tags$tr( lapply( colnames( tt ), function( x ) tags$th( x ) ) )
+)
+})
+output$mybody <- renderUI({
+rows <- list()
+for( i in 1:nrow( tt ) ) {
+rows[[i]] <- tags$tr( lapply( tt[i,], function( x ) tags$td( x ) ) )
+}
+tags$tbody( rows )
+})
+output$mytable <- renderUI({
+tags$table(
+myheader(),
+mybody()
+)
+})
+} ) )
+install_github('shiny','rstudio')
+require(devtools)
+install_github('shiny','rstudio')
+create sample vector
+set.seed(12345)
+iterations <- 100
+t <- runif(iterations, min = 0, max = 10)
+results <- NULL
+for(i in 1:iterations )
+{
+results[i] <- mean(t[1:i])   # calculate the mean for the first i elements
+}
+plot(results)
+results
+results <- matrix(iterations)
+results
+results <- matrix(nrow = iterations)
+results
+create sample vector
+set.seed(12345)
+iterations <- 100
+t <- runif(iterations, min = 0, max = 10)
+results <- matrix(nrow = iterations)
+for(i in 1:iterations ) {
+results[i] <- mean(t[1:i])   # calculate the mean for the first i elements
+}
+plot(results)
+create sample vector
+set.seed(12345)
+iterations <- 100
+tmp <- runif(iterations, min = 0, max = 10)
+results <- matrix(nrow = iterations)
+for(i in 1:iterations ) {
+results[i] <- mean(tmp[1:i])   # calculate the mean for the first i elements
+}
+plot(results)
+sessionInfo()
+require(lubridate); ymd("2013-11-31")
+setwd('~/github/')
+install.packages('shiny')
+shiny::runApp('stackOverflow')
+shiny::runApp('stackOverflow')
+options(shiny.trace = TRUE)
+options(shiny.trace = TRUE)
+shiny::runApp('stackOverflow')
+require(vegan)
+data(dune)
+kmeans
+kclus <- kmeans(dune,centers= 4, iter.max=1000, nstart=10000)
+distance matrix
+dune_dist <- dist(dune)
+Multidimensional scaling
+cmd <- cmdscale(dune_dist)
+cmd
+dune
+head(dune)
+ncol(dune)
+str(cmd)
+shiny::runApp('stackOverflow')
+require(dplyr)
+db <- src_sqlite(tempfile(), create = TRUE)
+iris2 <- copy_to(db, iris)
+install.packages('RSQLite')
+require(dplyr)
+db <- src_sqlite(tempfile(), create = TRUE)
+install.packages('RSQLite.extfuns')
+require(dplyr)
+db <- src_sqlite(tempfile(), create = TRUE)
+iris2 <- copy_to(db, iris)
+str(iris2)
+iris2$Species
+select(iris2, Species)
+?collect
+?collect
+x <- select(iris2, Species)
+x
+x + 1
+x <- collect(select(iris2, Species))
+x
+iris
+x <- select(iris2, Sepal.Length)
+x + 1
+x <- select(iris2, Sepal.Length)
+x + 1
+x
+data.frame(x) + 1
+x <- select(iris2, Sepal.Length)
+class(x)
+x <- select(iris2, Species)
+x <- collect(select(iris2, Species))
+class(x)
+x
+x <- collect(select(iris2, Species))[,1]
+x
+class(x)
+as.character(x)
+x <- select(iris2, Species)
+as.character(x)
+data.frame(x)
+c(x)
+require(dplyr)
+db <- src_sqlite(tempfile(), create = TRUE)
+iris2 <- copy_to(db, iris)
+str(iris2)
+iris2$Species
+select(iris2, Species)
+data.frame(select(iris2, Species))
+collect(select(iris2, Species))[,1]
+as.vector(select(iris2, Species))
+data.frame(select(iris2, Species))
+x <- data.frame(select(iris2, Species))
+class(x)
+as.vector(x)
+collect(select(iris2, Species))
+x <- select(iris2, Sepal.Length)
+class(x)
+select(iris2, Sepal.Length)
+collect(select(iris2, Sepal.Length))
+data.frame(select(iris2, Sepal.Length))
+data.frame(select(iris2, Sepal.Length))[[1]]
+subset(iris, Species == c("setosa", "virginica"), select = -Species)
+subset(iris, Species %in% c("setosa", "virginica"), select = -Species)
+subset(iris, Species %in% c("setosa", "virginica"))
+newdat <- subset(iris, Species %in% c("setosa", "virginica"))
+head(newdat)
+?subset
+require(devtools)
+install_github('shiny','rstudio')
+x <- 3:8
+x <- 3:8
+range(x)
+seq_along(range(x))
+seq
+?seq
+x <- range(x)
+seq(x[1], x[2])
+?seq
+?seq
+seq(1:10)
+seq(20:30)
+seq(30)
+do.call(seq, as.list(range(x)))
+do.call(seq, range(x))
+do.call(seq, as.list(range(x)))
+data.frame(matrix(nrow = 10, ncol = 10))
+x <- data.frame(matrix(nrow = 10, ncol = 10))
+seq(x)
+x <- data.frame(matrix(nrow = 10, ncol = 12))
+seq(x)
+length(x)

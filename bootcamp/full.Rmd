@@ -1,0 +1,13 @@
+# Introduction
+
+Some text ...
+
+```{r echo = FALSE, result = 'as.is'}
+sliderInput("nr_points2", "", min = 1, max = 10, value = 3)
+renderPlot({plot(1:10)}) 				          ## this works
+renderPlot({plot(1:input$nr_points2)})    ## this doesn't
+```
+
+# Conclusion
+
+Some more text ...
