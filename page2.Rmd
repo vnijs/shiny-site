@@ -1,0 +1,11 @@
+# Introduction
+
+Some text ...
+
+```{r echo = FALSE}
+uiOutput("ui_line")
+```
+
+# Conclusion
+
+Some more text ...

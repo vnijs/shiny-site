@@ -2,8 +2,8 @@
 
 Some text ...
 
-```{r}
-uiOutput("ui_line")
+```{r echo = FALSE}
+uiOutput("ui_faithfull")
 ```
 
 # Conclusion

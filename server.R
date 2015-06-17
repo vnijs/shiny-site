@@ -1,41 +1,38 @@
 shinyServer(function(input, output, session) {
 
+ 	output$ui_faithfull <- renderUI({
+ 	  ## example copied from from http://shiny.rstudio.com/gallery/faithful.html
+	  tagList(
+   	  selectInput(inputId = "n_breaks",
+   	              label = "Number of bins in histogram (approximate):",
+   	              choices = c(10, 20, 35, 50),
+   	              selected = 20),
+	    renderPlot({
+	      nr <- if (is.null(input$n_breaks)) 10 else input$n_breaks
+     	  hist(faithful$eruptions,
+     	       probability = TRUE,
+     	       breaks = as.numeric(nr),
+     	       xlab = "Duration (minutes)",
+     	       main = "Geyser eruption duration")
+	    })
+	  )
+ 	})
+
 	output$ui_line <- renderUI({
 	  tagList(
-	    sliderInput("nr_points", "", min = 1, max = 10, value = 3),
+	    sliderInput("nr_points", "", min = 10, max = 100, value = 50),
 	    renderPlot({
 	      nr <- if (is.null(input$nr_points)) 2 else input$nr_points
-	      plot(1:nr)
+	      plot(1:nr, rnorm(nr))
 	    })
 	  )
 	})
 
-# 	output$mc1_profit <- renderUI({
-# 	  tagList(
-# 	    sliderInput("price", label = "Adjust price:", min = 0, max = 12,
-# 	                value = state_init("price", 3), step = 1),
-# 	    renderPlot({
-# 	      Price <- seq(0,12,.1)
-# 	      b <- 10
-# 	      Profit <- -b * Price^2 + 120 * Price - 200
-# 	      dat <- data.frame(Price = Price, Profit = Profit)
-#
-# 	      p <- input$price
-# 	      prof <- -b * p^2 + 120 * p - 200
-#
-# 	      ggplot(dat, aes(x = Price, y = Profit)) +
-# 	        geom_line() +
-# 	        coord_fixed(ratio = 0.015, xlim = c(0, 12), ylim = c(-200, 200)) +
-# 	        geom_vline(xintercept = p, linetype = "dashed") +
-# 	        geom_hline(yintercept = prof, linetype = "dotted") +
-# 	        geom_point(x = p, y = prof, size = 8, color = "chocolate", alpha = 0.6) +
-# 	        annotate("text", x = 14, y = 115, label = paste0("Profit: $", prof)) +
-# 	        annotate("text", x = 6, y = 10, label = paste0("Profit: $", prof))
-# 	    })
-# 	  )
-# 	})
+	output$page1 <- renderUI({
+	  inclRmd("page1.Rmd")
+	})
 
-	output$full <- renderUI({
-	  inclRmd("full.Rmd")
+	output$page2 <- renderUI({
+	  inclRmd("page2.Rmd")
 	})
 })
