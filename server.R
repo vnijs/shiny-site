@@ -1,24 +1,7 @@
 shinyServer(function(input, output, session) {
 
- 	output$ui_faithfull <- renderUI({
- 	  ## example copied from from http://shiny.rstudio.com/gallery/faithful.html
-	  tagList(
-   	  selectInput(inputId = "n_breaks",
-   	              label = "Number of bins in histogram (approximate):",
-   	              choices = c(10, 20, 35, 50),
-   	              selected = 20),
-	    renderPlot({
-	      nr <- if (is.null(input$n_breaks)) 10 else input$n_breaks
-     	  hist(faithful$eruptions,
-     	       probability = TRUE,
-     	       breaks = as.numeric(nr),
-     	       xlab = "Duration (minutes)",
-     	       main = "Geyser eruption duration")
-	    })
-	  )
- 	})
-
 	output$ui_line <- renderUI({
+	  ## using renderUI here because Knitr will not create a slider
 	  tagList(
 	    sliderInput("nr_points", "", min = 10, max = 100, value = 50),
 	    renderPlot({

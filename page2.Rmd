@@ -3,7 +3,14 @@
 Some text ...
 
 ```{r echo = FALSE}
+## using renderUI here because Knitr will not create a slider
 uiOutput("ui_line")
+```
+
+```{r echo = FALSE}
+## Knitr does not render the slider 
+library(shiny)
+sliderInput("slider_test", "This should be another slider", min = 10, max = 100, value = 50)
 ```
 
 # Conclusion
