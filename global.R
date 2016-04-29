@@ -1,6 +1,7 @@
 library(dplyr)
 library(shiny)
 library(knitr)
+library(shinydashboard)
 
 inclRmd <- function(path, r_env = parent.frame()) {
   paste(readLines(path, warn = FALSE), collapse = '\n') %>%
