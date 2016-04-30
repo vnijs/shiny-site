@@ -2,16 +2,24 @@
 
 Some text ...
 
+## A slider ...
+
+Note that knitr will no render the below as a slider
+
+```{r echo = FALSE, results='asis'}
+library(shiny)
+sliderInput("slider_test", "This should be another slider", min = 10, max = 100, value = 50)
+```
+
+## Another slider
+
+However, if you use renderUI you can get this to work ...
+
 ```{r echo = FALSE}
 ## using renderUI here because Knitr will not create a slider
 uiOutput("ui_line")
 ```
 
-```{r echo = FALSE}
-## Knitr does not render the slider 
-library(shiny)
-sliderInput("slider_test", "This should be another slider", min = 10, max = 100, value = 50)
-```
 
 # Conclusion
 
