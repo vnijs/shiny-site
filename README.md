@@ -5,3 +5,6 @@ Dynamic rmarkdown files are great for one page apps. However, if you have multip
 See discussion on Shiny's GitHub page for background: https://github.com/rstudio/shiny/issues/859
 
 I use this approach in a Shiny app that generates interactive quizzes: https://github.com/vnijs/quizr. More generally, it can be used to create multi-page websites that contain text and interactive elements using Shiny and Knitr.
+
+The example in this branch uses `shinydashboard`.
+
