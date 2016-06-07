@@ -1,3 +1,4 @@
+
 shinyServer(function(input, output, session) {
 
 	output$ui_line <- renderUI({
@@ -18,6 +19,13 @@ shinyServer(function(input, output, session) {
 	output$page2 <- renderUI({
 	  inclRmd("./page2.Rmd")
 	})
+
+	# output$page3 <- renderUI({
+	#   tagList(
+	#     inclRmd("./page3.Rmd"),
+	#     getdeps()
+	#   )
+	# })
 
 	output$page3 <- renderUI({
 	  inclRmd("./page3.Rmd")

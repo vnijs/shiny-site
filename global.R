@@ -22,6 +22,17 @@ inclMD <- function(path)
 #     withMathJax
 # }
 
+# getdeps <- function() {
+#   htmltools::attachDependencies(
+#     htmltools::tagList(),
+#     c(
+#       htmlwidgets:::getDependency("functionplot","functionplotR"),
+#       htmlwidgets:::getDependency("datatables","DT"),
+#       recursive = FALSE
+#     )
+#   )
+# }
+
 inclRmd <- function(path, r_env = parent.frame()) {
   paste(readLines(path, warn = FALSE), collapse = '\n') %>%
   knitr::knit2html(text = ., fragment.only = TRUE, envir = r_env,  options = "",
@@ -29,7 +40,7 @@ inclRmd <- function(path, r_env = parent.frame()) {
     gsub("&lt;!--/html_preserve--&gt;","",.) %>%  ## knitr adds this
     gsub("&lt;!--html_preserve--&gt;","",.) %>%   ## knitr adds this
     HTML
-  # %>% withMathJax
+  # %>% tagList(., getdeps())
 }
 
 ## make html table

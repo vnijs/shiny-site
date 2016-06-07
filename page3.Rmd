@@ -4,13 +4,12 @@ Some text ...
 
 ## The widget
 
-
 ```{r echo = FALSE, screenshot.force = FALSE}
 # devtools::install_github("timelyportfolio/functionplotR")
 library(functionplotR)
-functionplotR::renderFunctionplot({
+div(functionplotR::renderFunctionplot({
   functionplotR::functionplot(
-    # disableZoom = TRUE,
+    disableZoom = TRUE,
     xLabel = "Price",
     yLabel = "Profit",
     tip = list(
@@ -27,10 +26,8 @@ functionplotR::renderFunctionplot({
       )
     ),
     xDomain = c(0, 13),
-    yDomain = c(-200, 200),
-    width = 200,
-    height = 200
+    yDomain = c(-200, 200)
   )
-})
+}), style = "width: 800px; margin-left: auto; margin-right: auto;")
 ```
 
