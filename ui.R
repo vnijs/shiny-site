@@ -5,8 +5,7 @@ getdeps <- function() {
     htmltools::tagList(),
     c(
       htmlwidgets:::getDependency("functionplot","functionplotR"),
-      htmlwidgets:::getDependency("datatables","DT"),
-      recursive = FALSE
+      htmlwidgets:::getDependency("datatables","DT")
     )
   )
 }

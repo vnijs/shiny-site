@@ -12,27 +12,6 @@ inclMD <- function(path)
   markdown::markdownToHTML(path, fragment.only = TRUE, options = "", stylesheet = "")
 
 ## function to render .Rmd files to html - does not embed image or add css
-# inclRmd <- function(path, r_env = parent.frame()) {
-#   paste(readLines(path, warn = FALSE), collapse = '\n') %>%
-#     knitr::knit2html(text = ., fragment.only = TRUE, quiet = TRUE,
-#                      envir = r_env, options = "", stylesheet = "") %>%
-#     gsub("&lt;!--/html_preserve--&gt;","",.) %>%  ## knitr adds this
-#     gsub("&lt;!--html_preserve--&gt;","",.) %>%   ## knitr adds this
-#     HTML %>%
-#     withMathJax
-# }
-
-# getdeps <- function() {
-#   htmltools::attachDependencies(
-#     htmltools::tagList(),
-#     c(
-#       htmlwidgets:::getDependency("functionplot","functionplotR"),
-#       htmlwidgets:::getDependency("datatables","DT"),
-#       recursive = FALSE
-#     )
-#   )
-# }
-
 inclRmd <- function(path, r_env = parent.frame()) {
   paste(readLines(path, warn = FALSE), collapse = '\n') %>%
   knitr::knit2html(text = ., fragment.only = TRUE, envir = r_env,  options = "",
@@ -40,11 +19,9 @@ inclRmd <- function(path, r_env = parent.frame()) {
     gsub("&lt;!--/html_preserve--&gt;","",.) %>%  ## knitr adds this
     gsub("&lt;!--html_preserve--&gt;","",.) %>%   ## knitr adds this
     HTML
-  # %>% tagList(., getdeps())
 }
 
 ## make html table
 make_table <- function(dat, width = "50%")
   knitr::kable(dat, align = "c", format = "html",
                table.attr = paste0("class='table table-condensed table-hover' style='width:", width, ";'"))
-
