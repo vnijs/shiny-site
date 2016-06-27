@@ -1,6 +1,9 @@
 library(dplyr)
 library(shiny)
-library(shinydashboard)
+if (!require("shinydashboard")) {
+  install.packages("shinydashboard")
+  library(shinydashboard)
+}
 library(knitr)
 library(DT)
 
@@ -19,11 +22,9 @@ inclRmd <- function(path, r_env = parent.frame()) {
     gsub("&lt;!--/html_preserve--&gt;","",.) %>%  ## knitr adds this
     gsub("&lt;!--html_preserve--&gt;","",.) %>%   ## knitr adds this
     HTML
-  # %>% tagList(., getdeps())
 }
 
 ## make html table
 make_table <- function(dat, width = "50%")
   knitr::kable(dat, align = "c", format = "html",
                table.attr = paste0("class='table table-condensed table-hover' style='width:", width, ";'"))
-
