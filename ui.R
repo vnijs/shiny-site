@@ -11,10 +11,24 @@ getdeps <- function() {
   )
 }
 
-shinyUI(
-  navbarPage("Shiny-site",
-    tabPanel("Page 1", uiOutput("page1")),
-    tabPanel("Page 2", uiOutput("page2")),
-    tabPanel("Page 3", uiOutput("page3"), getdeps())
+sidebar <-
+  sidebarMenu(
+    menuItem("Page 1",tabName = "page1"),
+    menuItem("Page 2",tabName = "page2"),
+    menuItem("Page 3",tabName = "page3")
   )
+
+dashboardPage(
+    dashboardHeader(title = "Hello"),
+    dashboardSidebar(
+      sidebar
+    ),
+    dashboardBody(
+      tabItems(
+        tabItem(tabName = "page1", uiOutput("page1")),
+        tabItem(tabName = "page2", uiOutput("page2")),
+        tabItem(tabName = "page3", uiOutput("page3"))
+      )
+    )
 )
+

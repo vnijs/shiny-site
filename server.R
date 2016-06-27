@@ -20,13 +20,6 @@ shinyServer(function(input, output, session) {
 	  inclRmd("./page2.Rmd")
 	})
 
-	# output$page3 <- renderUI({
-	#   tagList(
-	#     inclRmd("./page3.Rmd"),
-	#     getdeps()
-	#   )
-	# })
-
 	output$page3 <- renderUI({
 	  inclRmd("./page3.Rmd")
 	})

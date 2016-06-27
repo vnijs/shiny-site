@@ -1,5 +1,6 @@
 library(dplyr)
 library(shiny)
+library(shinydashboard)
 library(knitr)
 library(DT)
 
@@ -10,28 +11,6 @@ knitr::opts_chunk$set(echo = FALSE, comment = NA, cache = FALSE,
 ## function to render .md files to html
 inclMD <- function(path)
   markdown::markdownToHTML(path, fragment.only = TRUE, options = "", stylesheet = "")
-
-## function to render .Rmd files to html - does not embed image or add css
-# inclRmd <- function(path, r_env = parent.frame()) {
-#   paste(readLines(path, warn = FALSE), collapse = '\n') %>%
-#     knitr::knit2html(text = ., fragment.only = TRUE, quiet = TRUE,
-#                      envir = r_env, options = "", stylesheet = "") %>%
-#     gsub("&lt;!--/html_preserve--&gt;","",.) %>%  ## knitr adds this
-#     gsub("&lt;!--html_preserve--&gt;","",.) %>%   ## knitr adds this
-#     HTML %>%
-#     withMathJax
-# }
-
-# getdeps <- function() {
-#   htmltools::attachDependencies(
-#     htmltools::tagList(),
-#     c(
-#       htmlwidgets:::getDependency("functionplot","functionplotR"),
-#       htmlwidgets:::getDependency("datatables","DT"),
-#       recursive = FALSE
-#     )
-#   )
-# }
 
 inclRmd <- function(path, r_env = parent.frame()) {
   paste(readLines(path, warn = FALSE), collapse = '\n') %>%
