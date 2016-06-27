@@ -8,4 +8,4 @@ I use this approach in a Shiny app that generates interactive quizzes: https://g
 
 ## Alternatives
 
-If you prefer `shinydashboard` there is a minimal working example in the `dashboard` branch of this github repository. 
+If you prefer `shinydashboard` there is a minimal working example in the `dashboard` branch of this github repository by <a href="https://github.com/1beb" target="_blank">Brandon Bertelsen</a>
