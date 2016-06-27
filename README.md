@@ -6,6 +6,11 @@ See discussion on Shiny's GitHub page for background: https://github.com/rstudio
 
 I use this approach in a Shiny app that generates interactive quizzes: https://github.com/vnijs/quizr. More generally, it can be used to create multi-page websites that contain text and interactive elements using Shiny and Knitr.
 
+<<<<<<< HEAD
 ## Alternatives
 
 If you prefer `shinydashboard` there is a minimal working example in the `dashboard` branch of this github repository. 
+=======
+The example in this branch uses `shinydashboard`.
+
+>>>>>>> ddc3c278524b01611064da5b69186915389eff2f
