@@ -2,6 +2,10 @@
 
 Some text ...
 
+An image ...
+
+![](images/Rlogo.png)
+
 ## A slider ...
 
 Note that knitr will no render the below as a slider
