@@ -22,3 +22,14 @@ tags$div(
 # Conclusion
 
 Some more text ...
+
+A few emoji ...
+
+😀😀😀
+
+Some special characters ...
+
+&#931;
+&#931;
+&#931;
+&#931;
