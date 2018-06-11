@@ -23,6 +23,7 @@ tags$div(
 
 ```{r}
 dat <- data.frame(x = rnorm(100), y = rnorm(100))
+## Note the use of renderPlot ... we are in a shiny app after all
 renderPlot({
   ggplot(dat, aes(x = x, y = y)) + geom_point()
 }, width = 700, height = 500, res = 144)
