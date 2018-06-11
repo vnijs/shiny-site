@@ -1,4 +1,4 @@
-
+library(ggplot2)
 shinyServer(function(input, output, session) {
 
 	output$ui_line <- renderUI({

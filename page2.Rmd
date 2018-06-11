@@ -8,6 +8,8 @@ An image ...
 
 > Note that in shiny applications path references are, by default, relative to the www/ directory. So a path to images/Rlogo.png in an .Rmd document points to www/images/ in the shiny application directory.
 
+
+
 ## A slider ...
 
 Note that knitr will not render the below as a slider

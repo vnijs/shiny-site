@@ -4,8 +4,8 @@ getdeps <- function() {
   htmltools::attachDependencies(
     htmltools::tagList(),
     c(
-      htmlwidgets:::getDependency("functionplot","functionplotR"),
-      htmlwidgets:::getDependency("datatables","DT")
+      htmlwidgets:::getDependency("functionplot", "functionplotR"),
+      htmlwidgets:::getDependency("datatables", "DT")
     )
   )
 }

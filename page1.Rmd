@@ -19,6 +19,15 @@ tags$div(
 ), style = "width: 800px; margin-left: auto; margin-right: auto;")
 ```
 
+# A plot
+
+```{r}
+dat <- data.frame(x = rnorm(100), y = rnorm(100))
+renderPlot({
+  ggplot(dat, aes(x = x, y = y)) + geom_point()
+}, width = 700, height = 500, res = 144)
+```
+
 # Conclusion
 
 Some more text ...
