@@ -6,9 +6,6 @@ Some text ...
 
 ```{r echo = FALSE, screenshot.force = FALSE}
 ## Thanks for @timelyportfolio for this widget
-if (!"functionplotR" %in% installed.packages()[,"Package"])
-  devtools::install_github("timelyportfolio/functionplotR@139a2bcaea6a2f10c181473efb2bd29b7418b4bb")
-library(functionplotR)
 div(functionplotR::renderFunctionplot({
   functionplotR::functionplot(
     disableZoom = TRUE,

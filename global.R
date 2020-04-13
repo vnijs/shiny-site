@@ -2,6 +2,12 @@ library(dplyr)
 library(shiny)
 library(knitr)
 library(DT)
+library(ggplot2)
+library(htmltools)
+library(htmlwidgets)
+# original -- devtools::install_github("timelyportfolio/functionplotR@139a2bcaea6a2f10c181473efb2bd29b7418b4bb")
+# fixed for shinyapps.io -- devtools::install_github("vnijs/functionplotR")
+library(functionplotR)
 
 encoding <- getOption("shiny.site.encoding", default = "UTF-8")
 

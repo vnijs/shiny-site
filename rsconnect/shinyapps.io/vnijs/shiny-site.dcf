@@ -1,0 +1,12 @@
+name: shiny-site
+title: shiny-site
+username:
+account: vnijs
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2106290
+bundleId: 3005382
+url: https://vnijs.shinyapps.io/shiny-site/
+when: 1586753572.61889
+asMultiple: FALSE
+asStatic: FALSE
